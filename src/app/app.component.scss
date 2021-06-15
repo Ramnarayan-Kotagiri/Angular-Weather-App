@@ -1,0 +1,197 @@
+.container {
+  max-width: 1500px;
+  margin: 0px auto;
+  height: calc(100vh - 64px);
+  width: 100%;
+  position: relative;
+  .wether-data {
+    height: 300px;
+    border: 1px solid;
+  }
+}
+
+@media (min-width: 1440px) {
+  .weather-app-title {
+    font-size: 60px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .weather-app-title {
+    font-size: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .weather-app-title {
+    font-size: 40px;
+  }
+}
+.weather-app-title {
+  display: block;
+  margin: 0px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  height: auto;
+  position: relative;
+  padding: 20px 0px;
+  font-size: 30px;
+  top: 20%;
+  text-align: center;
+  transition: all 0.5s ease 0s;
+}
+
+@media (min-width: 1440px) {
+  .weather-app-form {
+    max-width: 600px !important;
+  }
+}
+.weather-app-form {
+  top: 30%;
+  position: relative;
+  margin: 0px auto;
+  max-width: 500px;
+  transition: all 0.8s ease 0.5s;
+}
+
+@media (min-width: 1024px) {
+  .weather-app-searchbar {
+    padding: 15px 20px 15px 45px !important;
+    border-radius: 30px;
+    font-size: 25px !important;
+  }
+}
+@media (min-width: 768px) {
+  .weather-app-searchbar {
+    font-size: 18px;
+  }
+}
+.weather-app-searchbar {
+  width: 100%;
+  border: none;
+  background-color: #ffffff;
+  font-size: 16px;
+  padding: 10px 15px 10px 40px;
+  color: #c5c5c5;
+  transition: 0.2s;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  &:focus {
+    color: #191919;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    outline: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .weather-app-searchicon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .weather-app-searchicon {
+    height: 15px;
+    width: 15px;
+    font-size: 15px;
+  }
+}
+.weather-app-searchicon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 14px;
+  font-size: 14px;
+  color: #c5c5c5;
+}
+
+.stats-title {
+  font: 500 16px "Raleway", sans-serif;
+  color: #e7e7eb;
+  margin-bottom: 8px;
+}
+
+.stats-value {
+  font: 700 64px "Raleway", sans-serif;
+  color: #e7e7eb;
+}
+
+.forecast {
+  flex-basis: 100%;
+  margin: 20px 0px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+@media (min-width: 1440px) {
+  .forecast-title {
+    font-size: 29px;
+  }
+}
+@media (min-width: 1024px) {
+  .forecast-title {
+    font-size: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .forecast-title {
+    font-size: 23px;
+  }
+}
+
+.forecast-title {
+  color: rgb(255, 255, 255);
+  display: block;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  padding: 5px 0px;
+}
+
+@media (min-width: 1024px) {
+  .forecast-box {
+    order: 4;
+  }
+}
+.forecast-box {
+  position: relative;
+  display: flex;
+  /* overflow: scroll hidden; */
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.forecast-card:first-child {
+  margin-left: 0px;
+}
+@media (min-width: 1440px) {
+  .forecast-card {
+    flex-basis: 140px;
+  }
+}
+@media (min-width: 1024px) {
+  .forecast-card {
+    flex-basis: 125px;
+  }
+}
+@media (min-width: 768px) {
+  .forecast-card {
+    flex-basis: 110px;
+  }
+}
+.forecast-card {
+  flex-shrink: 0;
+  flex-basis: 25%;
+  padding: 10px;
+  margin: 0px 5px;
+  border-radius: 5px;
+  // background-color: rgba(255, 255, 255, 0.2);
+  background-color: cadetblue;
+}

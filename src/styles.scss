@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box  ;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    margin: 0 15px;
+    position: relative;
+    @media (min-width: 768px) {
+      margin: 0 20px;
+    }
+  
+    &:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("./assets/images/weather.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index:-5;
+    }
+  }
+  
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
