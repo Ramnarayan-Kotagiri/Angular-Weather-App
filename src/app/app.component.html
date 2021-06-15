@@ -53,14 +53,14 @@
           </p>
         </div>
         <div class="col">
-          <div class="row pb-2">
-            <div class="col">
+          <div class="row mb-5">
+            <div class="col mb-2">
               <span class="stats-title">Wind status</span>
               <div class="stats-value">
                 {{ weatherToday.wind_speed | number: "1.0-1" }} mph
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-2">
               <span class="stats-title">Humidity</span>
               <div class="stats-value">
                 {{ weatherToday.humidity | number: "1.0-0" }}%
@@ -68,13 +68,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="col">
+            <div class="col mb-2">
               <span class="stats-title">Visibility</span>
               <div class="stats-value">
                 {{ weatherToday.visibility | number: "1.0-1" }} miles
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-2">
               <span class="stats-title">Air Pressure</span>
               <div class="stats-value">
                 {{ weatherToday.air_pressure | number: "1.0-1" }} mb
