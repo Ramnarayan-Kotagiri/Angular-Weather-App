@@ -22,7 +22,7 @@ Angular and create a public repo on your github account for this app.
 <img src="https://i.ibb.co/6btVB5D/desktop-Screenshot.png" align="center">
 
 - Mobile View
-<img src="https://i.ibb.co/6bDYgwB/mobile-Screenshot.png" align="center>
+<img src="https://i.ibb.co/6bDYgwB/mobile-Screenshot.png" align="center">
 
 ### Built With
 - Angular (https://www.angular.io/)
