@@ -21,7 +21,7 @@ Create and bootstrap a Single Page Application using ReactJS or
 Angular and create a public repo on your github account for this app.
 
 <b>Screenshot:</b> 
-<img src="https://github.com/Ramnarayan-Kotagiri/Angular-Weather-App/raw/main/src/assets/images/desktopScreenshot.PNG" align="center">
+<img src="https://i.ibb.co/6btVB5D/desktop-Screenshot.png" align="center">
 
 ### Built With
 - Angular (https://www.angular.io/)
