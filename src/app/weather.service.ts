@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class WeatherService {
-  readonly CORS_PROXY_URL = 'https://api.allorigins.win/get?url=';
+  
+  readonly PROXY_URL = 'https://api.allorigins.win/get?url='; //Pull contents from any page via API (as JSON/P or raw) and avoid Same-origin policy problems.
   readonly API_PROVIDER_URL = 'https://www.metaweather.com/api/';
 
   constructor(private http: HttpClient) { }
@@ -20,7 +21,7 @@ export class WeatherService {
     if(query === ""){
       return of([])
     }
-    const url = this.CORS_PROXY_URL + this.API_PROVIDER_URL + 'location/search/?query=' + query;
+    const url = this.PROXY_URL + this.API_PROVIDER_URL + 'location/search/?query=' + query;
     return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }
 
@@ -29,7 +30,7 @@ export class WeatherService {
  * @return weather forecast for the location.
  */
   fetchWeatherData(woeid: number): Observable<any> {
-    const url = this.CORS_PROXY_URL.concat(this.API_PROVIDER_URL, 'location/', woeid.toString());
+    const url = this.PROXY_URL.concat(this.API_PROVIDER_URL, 'location/', woeid.toString());
     return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }
 }
