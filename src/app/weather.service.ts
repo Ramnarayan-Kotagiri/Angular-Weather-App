@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,6 +12,10 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
+/**
+ * @param query selected by user on search-bar.
+ * @return the locations whose title match the query.
+ */
   searchLocation(query: string): Observable<any> {
     if(query === ""){
       return of([])
@@ -20,7 +24,11 @@ export class WeatherService {
     return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }
 
-  fetchWeatherData1(woeid: number): Observable<any> {
+/**
+ * @param woeid of location selected by the user from the drop-down.
+ * @return weather forecast for the location.
+ */
+  fetchWeatherData(woeid: number): Observable<any> {
     const url = this.CORS_PROXY_URL.concat(this.API_PROVIDER_URL, 'location/', woeid.toString());
     return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }

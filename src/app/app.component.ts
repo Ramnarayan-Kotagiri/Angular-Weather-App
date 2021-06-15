@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from './weather.service';
-import {Observable, of, OperatorFunction} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
@@ -33,14 +33,21 @@ export class AppComponent {
 
   formatter = (result:any) => result.title;
 
+
+/**
+ * @param item selected by user on search-bar.
+ * @return weather forecast data is received from the weather api for the selected item.
+ */
   selectedItem(item:any){
     this.city=item.item;
-    this.weatherService.fetchWeatherData1(this.city.woeid).subscribe((data: any) => {
+    this.weatherService.fetchWeatherData(this.city.woeid).subscribe((data: any) => {
       if (data) {
         this.locationForecast = data.consolidated_weather;
         this.weatherToday = data.consolidated_weather[0];
         this.timezone = data.timezone
       }
-    });
+    }, (error: any) => {
+      alert("ERROR: There was an error fetching the weather forecast")
+    })
   }
 }
