@@ -1,31 +1,32 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { WeatherService } from './weather.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule,FormsModule],
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
+      providers:[
+        WeatherService
+      ]
+    });
+    fixture = TestBed.createComponent(AppComponent)
+    component = fixture.componentInstance;
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('can load instance', () => {
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'WeatherApp'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('WeatherApp');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('WeatherApp app is running!');
+    expect(component.title).toEqual('WeatherApp');
   });
 });
