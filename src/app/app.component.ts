@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { WeatherService } from './weather.service';
 import {Observable, of, OperatorFunction} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
@@ -13,15 +12,11 @@ export class AppComponent {
   title = 'WeatherApp';
   query = '';
   city: any;
-  error: any;
-  searching = false;
-  searchFailed = false;
-  locationOptions: any[] = [];
+  locationForecast: any[] = [];
   timezone = ''
   weatherToday:any;
 
   constructor(
-    private http: HttpClient,
     private weatherService: WeatherService
   ) {}
 
@@ -32,7 +27,6 @@ export class AppComponent {
         distinctUntilChanged(),
         switchMap( (text) =>  this.weatherService.searchLocation(text) ),
         catchError(() => {
-          this.searchFailed = true;
           return of([]);
         }))              
   }
@@ -41,14 +35,11 @@ export class AppComponent {
 
   selectedItem(item:any){
     this.city=item.item;
-    this.weatherService.fetchWeatherData(this.city.woeid);
-    this.weatherService.getWeatherData().subscribe((data: any) => {
+    this.weatherService.fetchWeatherData1(this.city.woeid).subscribe((data: any) => {
       if (data) {
-        this.locationOptions = data.consolidated_weather;
+        this.locationForecast = data.consolidated_weather;
         this.weatherToday = data.consolidated_weather[0];
         this.timezone = data.timezone
-      } else {
-        this.searchFailed = true;
       }
     });
   }

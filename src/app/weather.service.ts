@@ -10,8 +10,6 @@ export class WeatherService {
   readonly CORS_PROXY_URL = 'https://api.allorigins.win/get?url=';
   readonly API_PROVIDER_URL = 'https://www.metaweather.com/api/';
 
-  weatherSubject$ = new Subject<any>();
-
   constructor(private http: HttpClient) { }
 
   searchLocation(query: string): Observable<any> {
@@ -22,15 +20,8 @@ export class WeatherService {
     return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }
 
-  fetchWeatherData(woeid: number): any {
+  fetchWeatherData1(woeid: number): Observable<any> {
     const url = this.CORS_PROXY_URL.concat(this.API_PROVIDER_URL, 'location/', woeid.toString());
-    this.weatherSubject$.next(null);
-    this.http.get(url).subscribe((data: any) => {
-      this.weatherSubject$.next(JSON.parse(data.contents));
-    });
-  }
-
-  getWeatherData(): Observable<any> {
-    return this.weatherSubject$;
+    return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
   }
 }

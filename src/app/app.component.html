@@ -87,7 +87,7 @@
     <div class="col-sm-12">
       <div class="d-flex forecast">
         <div class="forecast-box">
-          <div class="forecast-card" *ngFor="let weather of locationOptions">
+          <div class="forecast-card" *ngFor="let weather of locationForecast">
             <p>{{ weather.applicable_date | date: "E, d MMM" }}</p>
             <img
               height="30px"
@@ -95,7 +95,6 @@
             />
             <p>{{ weather.weather_state_name }}</p>
             <p>{{ weather.max_temp | number: '1.0-0' }}°C - {{ weather.min_temp | number: '1.0-0' }}°C</p>
-            <!-- <p>{{ weather.min_temp | number }}°C</p> -->
           </div>
         </div>
       </div>

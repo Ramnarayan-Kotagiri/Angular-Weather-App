@@ -4,10 +4,6 @@
   height: calc(100vh - 64px);
   width: 100%;
   position: relative;
-  .wether-data {
-    height: 300px;
-    border: 1px solid;
-  }
 }
 
 @media (min-width: 1440px) {
@@ -86,20 +82,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .weather-app-searchicon {
-    height: 16px;
-    width: 16px;
-    font-size: 16px;
-  }
-}
-@media (min-width: 768px) {
-  .weather-app-searchicon {
-    height: 15px;
-    width: 15px;
-    font-size: 15px;
-  }
-}
 .weather-app-searchicon {
   display: block;
   position: absolute;
@@ -119,7 +101,7 @@
 }
 
 .stats-value {
-  font: 700 64px "Raleway", sans-serif;
+  font: 700 40px "Raleway", sans-serif;
   color: #e7e7eb;
 }
 
@@ -128,22 +110,6 @@
   margin: 20px 0px;
   overflow: hidden;
   overflow-x: auto;
-}
-
-@media (min-width: 1440px) {
-  .forecast-title {
-    font-size: 29px;
-  }
-}
-@media (min-width: 1024px) {
-  .forecast-title {
-    font-size: 26px;
-  }
-}
-@media (min-width: 768px) {
-  .forecast-title {
-    font-size: 23px;
-  }
 }
 
 .forecast-title {
@@ -155,11 +121,6 @@
   padding: 5px 0px;
 }
 
-@media (min-width: 1024px) {
-  .forecast-box {
-    order: 4;
-  }
-}
 .forecast-box {
   position: relative;
   display: flex;
@@ -171,27 +132,12 @@
 .forecast-card:first-child {
   margin-left: 0px;
 }
-@media (min-width: 1440px) {
-  .forecast-card {
-    flex-basis: 140px;
-  }
-}
-@media (min-width: 1024px) {
-  .forecast-card {
-    flex-basis: 125px;
-  }
-}
-@media (min-width: 768px) {
-  .forecast-card {
-    flex-basis: 110px;
-  }
-}
+
 .forecast-card {
   flex-shrink: 0;
-  flex-basis: 25%;
+  flex-basis: 30%;
   padding: 10px;
   margin: 0px 5px;
   border-radius: 5px;
-  // background-color: rgba(255, 255, 255, 0.2);
   background-color: cadetblue;
 }
