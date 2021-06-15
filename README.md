@@ -1,27 +1,36 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+<h1 align="center">Weather App</h1>
 
-## Development server
+<div align="center">
+   Assignment for mind-alliance.com
+</div>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Table of Contents
 
-## Code scaffolding
+- Overview
+  - Built With
+- Instructions
+- Tasks
+- Contact
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- OVERVIEW -->
 
-## Build
+## Overview
+Create and bootstrap a Single Page Application using ReactJS or
+Angular and create a public repo on your github account for this app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Built With
+- Angular (https://www.angular.io/)
 
-## Running unit tests
+## Instructions
+Have a look on https://www.metaweather.com/api/ which is a public
+HTTPS web API about the weather!
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tasks
+- Create a simple layout with a big search-bar and a main view.
+- When a user searches through the search-bar, use the location searchion method to show the results on the main view.
+- When a user clicks on a Location, use the Location method to display on a modal or sub-view the consolidated_weather data.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contact
+- Website (https://ramnarayan-kotagiri.github.io/)
