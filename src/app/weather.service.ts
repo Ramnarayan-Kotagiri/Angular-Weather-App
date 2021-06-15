@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,12 @@ export class WeatherService {
       return of([])
     }
     const url = this.PROXY_URL + this.API_PROVIDER_URL + 'location/search/?query=' + query;
-    return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
-  }
+    return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)),catchError((err) => {
+      console.log('error caught in service');
+      console.error(err);
+      return throwError(err);
+  }))
+}
 
 /**
  * @param woeid of location selected by the user from the drop-down.
@@ -31,6 +35,10 @@ export class WeatherService {
  */
   fetchWeatherData(woeid: number): Observable<any> {
     const url = this.PROXY_URL.concat(this.API_PROVIDER_URL, 'location/', woeid.toString());
-    return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)));
+    return this.http.get(url).pipe(map((x: any) => JSON.parse(x.contents)),catchError((err) => {
+      console.log('error caught in service');
+      console.error(err);
+      return throwError(err);
+    }))
   }
 }
