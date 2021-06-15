@@ -1,5 +1,3 @@
-# WeatherApp
-
 <h1 align="center">Weather App</h1>
 
 <div align="center">
@@ -20,7 +18,11 @@
 Create and bootstrap a Single Page Application using ReactJS or
 Angular and create a public repo on your github account for this app.
 
+- Web View
 <img src="https://i.ibb.co/6btVB5D/desktop-Screenshot.png" align="center">
+
+- Mobile View
+<img src="https://i.ibb.co/6bDYgwB/mobile-Screenshot.png" align="center>
 
 ### Built With
 - Angular (https://www.angular.io/)
